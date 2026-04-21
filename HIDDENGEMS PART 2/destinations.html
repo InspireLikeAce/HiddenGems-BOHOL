@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinations – HiddenGems Bohol</title>
+  <meta name="description" content="Browse hidden beaches, waterfalls, mountains, nature spots and cultural villages in Bohol.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <div id="pageHeader"></div>
+
+  <div class="container" style="padding-top:2rem;">
+    <div class="filters" id="filters"></div>
+    <div class="dest-grid" id="destGrid"></div>
+  </div>
+
+  <div style="padding-bottom:5rem;"></div>
+  <div id="footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById('navbar').innerHTML = getNavbar('destinations');
+    document.getElementById('pageHeader').innerHTML = getPageHeader('Explore Bohol', 'Hidden Gems Directory', 'Discover underrated destinations across Bohol, categorized for your next adventure.');
+    document.getElementById('footer').innerHTML = getFooter();
+
+    const params = new URLSearchParams(window.location.search);
+    let activeFilter = params.get('category') || 'all';
+
+    function renderFilters() {
+      const cats = ['all','beaches','waterfalls','hills','hidden-restos','cultural'];
+      document.getElementById('filters').innerHTML = cats.map(c => {
+        const label = c === 'all' ? 'All' : categoryLabels[c].icon + ' ' + categoryLabels[c].label;
+        return '<button class="filter-btn '+(activeFilter===c?'active':'')+'" onclick="setFilter(\''+c+'\')">'+label+'</button>';
+      }).join('');
+    }
+
+    function renderGrid() {
+      const filtered = activeFilter === 'all' ? destinations : destinations.filter(d => d.category === activeFilter);
+      document.getElementById('destGrid').innerHTML = filtered.map(d => {
+        const cat = categoryLabels[d.category];
+        return '<a href="destination-detail.html?id='+d.id+'" class="dest-card">'
+          +'<div class="dest-card-img"><img src="'+d.image+'" alt="'+d.name+'" loading="lazy"></div>'
+          +'<div class="dest-card-body">'
+          +'<div class="dest-card-tag">'+cat.icon+' '+cat.label+' · '+d.municipality+'</div>'
+          +'<h3 class="dest-card-title">'+d.name+'</h3>'
+          +'<p class="dest-card-desc">'+d.shortDescription+'</p>'
+          +'<span class="dest-card-link">Read More →</span>'
+          +'</div></a>';
+      }).join('');
+    }
+
+    function setFilter(cat) {
+      activeFilter = cat;
+      renderFilters();
+      renderGrid();
+    }
+
+    renderFilters();
+    renderGrid();
+  </script>
+</body>
+</html>
