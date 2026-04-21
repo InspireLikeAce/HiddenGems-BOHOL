@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HiddenGems Bohol – Discover Undiscovered Destinations</title>
+  <meta name="description" content="Explore lesser-known beaches, waterfalls, mountains, and cultural villages in Bohol, Philippines.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <section class="hero">
+    <img src="images/hero-bohol.jpg" alt="Chocolate Hills Bohol" class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">PHILIPPINES · BOHOL PROVINCE</p>
+      <h1>Discover Bohol's<br><span>Hidden Gems</span></h1>
+      <p>15 hidden spots that you will discover only in Bohol curated just for you!</p>
+      <a href="destinations.html" class="hero-btn">EXPLORE DESTINATIONS</a>
+    </div>
+    <p class="hero-scroll">SCROLL</p>
+  </section>
+
+  <section class="section">
+    <div class="container text-center" style="max-width:700px;margin:0 auto;">
+      <p class="section-tag">OUR MISSION</p>
+      <h2 class="section-title">Promoting Undiscovered Places</h2>
+      <p class="section-desc mx-auto">We showcase lesser-known natural, cultural, and community-based destinations in Bohol to encourage sustainable tourism and support local communities. Every hidden gem deserves to be appreciated — responsibly.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="featured-grid">
+        <div>
+          <p class="section-tag">HIDDEN GEM OF THE MONTH</p>
+          <h2 class="section-title">Quinale Beach, Anda</h2>
+          <p class="section-desc">A pristine white sand beach with crystal-clear waters, far from the tourist crowds. Quinale Beach offers a serene and untouched coastal experience unlike anywhere else in Bohol.</p>
+          <a href="destination-detail.html?id=quinale-beach" class="read-more-btn">READ MORE</a>
+        </div>
+        <div>
+          <img src="images/uploads/quinale.jpg" alt="Quinale Beach" class="featured-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container text-center">
+      <h2 class="section-title">Explore by Category</h2>
+      <div class="category-grid" style="margin-top:2rem;">
+        <a href="destinations.html?category=beaches" class="category-card"><div class="label">Beaches</div></a>
+        <a href="destinations.html?category=waterfalls" class="category-card"><div class="label">Waterfalls</div></a>
+        <a href="destinations.html?category=hills" class="category-card"><div class="label">Hills</div></a>
+        <a href="destinations.html?category=hidden-restos" class="category-card"><div class="label">Hidden Restos</div></a>
+        <a href="destinations.html?category=cultural" class="category-card"><div class="label">Cultural Villages</div></a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById('navbar').innerHTML = getNavbar('home');
+    document.getElementById('footer').innerHTML = getFooter();
+  </script>
+</body>
+</html>
