@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About – HiddenGems Bohol</title>
+    <meta
+      name="description"
+      content="Learn about the purpose, vision, and team behind HiddenGems Bohol."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div id="pageHeader"></div>
+
+    <section class="section">
+      <div class="content-cards">
+        <div class="content-card">
+          <h2>Project Purpose</h2>
+          <p>
+            HiddenGems Bohol is a digital showcase dedicated to promoting
+            lesser-known natural, cultural, and community-based destinations in
+            the province of Bohol, Philippines. Our goal is to encourage
+            sustainable tourism by shifting attention from overcrowded tourist
+            spots to undiscovered gems that deserve recognition and responsible
+            visitation.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h2>Vision &amp; Mission</h2>
+          <h3>Vision</h3>
+          <p>
+            A Bohol where every community benefits from tourism, and every
+            destination is treated with respect and care.
+          </p>
+          <h3>Mission</h3>
+          <p>
+            To digitally document and promote Bohol's hidden gems while
+            educating visitors about responsible and sustainable tourism
+            practices.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h2>SDGs Supported</h2>
+          <div class="sdg-grid" style="margin-top: 1rem">
+            <div class="sdg-item">
+              <span class="sdg-num">8</span
+              ><span class="sdg-label">Decent Work and Economic Growth</span>
+            </div>
+            <div class="sdg-item">
+              <span class="sdg-num">11</span
+              ><span class="sdg-label">Sustainable Cities and Communities</span>
+            </div>
+            <div class="sdg-item">
+              <span class="sdg-num">12</span
+              ><span class="sdg-label"
+                >Responsible Consumption and Production</span
+              >
+            </div>
+            <div class="sdg-item">
+              <span class="sdg-num">14</span
+              ><span class="sdg-label">Life Below Water</span>
+            </div>
+            <div class="sdg-item">
+              <span class="sdg-num">15</span
+              ><span class="sdg-label">Life on Land</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h2>Developer</h2>
+          <p>
+            This project was created as a digital showcase to highlight the
+            beauty and importance of Bohol's undiscovered destinations. Built
+            with passion for sustainable tourism and love for the province of
+            Bohol.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      document.getElementById("navbar").innerHTML = getNavbar("about");
+      document.getElementById("pageHeader").innerHTML = getPageHeader(
+        "About the Project",
+        "About HiddenGems Bohol",
+        "Learn about our purpose, vision, and the people behind this project.",
+      );
+      document.getElementById("footer").innerHTML = getFooter();
+    </script>
+  </body>
+</html>
